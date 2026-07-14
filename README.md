@@ -1,32 +1,21 @@
-# React + TypeScript + Vite
+# tremor
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A 3D globe showing live USGS earthquakes as glowing ring arcs. Each earthquake's magnitude controls ring size and expansion speed, while depth determines color (red = shallow, amber = mid, blue = deep). Orbit the globe freely and tap any ring for earthquake details.
 
-Currently, two official plugins are available:
+**Visual Style:** Dark — Ember (volcanic glow) — deep warm background, red/amber/blue rings, gold hero number
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Data Source:** USGS Earthquake Catalog API (CORS-free, real-time)
 
-## React Compiler
+**How it works:**
+- Earthquakes appear as glowing ring arcs at their exact geographic positions on a rotating 3D globe
+- Ring radius scales with magnitude (0.3 to 2.5 globe radii)
+- Ring color encodes depth: red (<33km shallow), amber (33-150km mid), blue (>150km deep)
+- Hero number shows the strongest quake magnitude in the current batch
+- Tap a ring to reveal a detail panel with magnitude, depth, location, and a link to the USGS event page
+- The data stamp shows source, event count, live/fallback status, and time since last update
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**GitHub:** https://github.com/parthchandak02/tremor
 
-## Expanding the Oxlint configuration
+**Live:** https://tremor.parthchandak.info
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+**Tech:** React Three Fiber + drei. Hosted on Cloudflare Pages.
