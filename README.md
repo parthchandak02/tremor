@@ -48,8 +48,8 @@ The catalogue is re-fetched every 60 seconds. If the request fails, five real ev
 14 July 2026 are shown instead and the stamp in the bottom-left reads `fallback` rather than
 `live`. Drag to orbit and scroll to zoom. With `prefers-reduced-motion` the globe stops turning.
 
-The globe is a plain sphere with no coastlines, so the rings are the only geography. The rings
-also play once: after their first expand-and-fade they stay hidden until the page is reloaded.
+The globe is a plain sphere with no coastlines, so the rings are the only geography. Each ring
+expands, fades out, rests for a moment and then ripples again.
 
 ## Tap a ring
 

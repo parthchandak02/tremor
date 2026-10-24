@@ -22,6 +22,8 @@ import { useEarthquakeStore } from '../data/earthquakes'
 const UP = new Vector3(0, 0, 1)
 const BASE_EXPAND_DURATION = 4
 const FADE_DURATION = 6
+// One ripple lasts FADE_DURATION, then a short rest before the next one starts
+const CYCLE_DURATION = FADE_DURATION + 1
 
 interface RingProps {
   earthquake: Earthquake
@@ -55,7 +57,7 @@ export default function Ring({ earthquake, reducedMotion = false }: RingProps) {
   }
 
   useFrame((_, delta) => {
-    elapsedRef.current += delta * expandSpeed
+    elapsedRef.current = (elapsedRef.current + delta * expandSpeed) % CYCLE_DURATION
     const expandT = Math.min(elapsedRef.current / BASE_EXPAND_DURATION, 1)
     const fadeT = Math.min(elapsedRef.current / FADE_DURATION, 1)
     const scale = expandT
