@@ -11,19 +11,20 @@
 ![Data](https://img.shields.io/badge/data-USGS%20Earthquakes-ff8800?style=flat-square)
 ![React Three Fiber](https://img.shields.io/badge/React%20Three%20Fiber-9-111111?style=flat-square&logo=threedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Vite%208-111111?style=flat-square&logo=typescript&logoColor=white)
-![Status](https://img.shields.io/badge/creative%20daily-experiment%2C%20not%20deployed-555555?style=flat-square)
+![Live](https://img.shields.io/badge/live-tremor--5y7.pages.dev-ff8800?style=flat-square)
 
 </h6>
 
+<a href="https://tremor-5y7.pages.dev"><b>Live demo</b></a> ·
 <a href="#how-it-works"><b>How it works</b></a> ·
 <a href="#tap-a-ring"><b>Tap a ring</b></a> ·
 <a href="#run-it"><b>Run it</b></a>
 
 <br><br>
 
-<img src="docs/assets/readme/hero.jpg" width="100%" alt="A dark sphere in the centre of a near-black scene, surrounded by dozens of overlapping translucent red, amber and pale blue rings, with 7.7 strongest quake in gold in the top-left and a depth colour legend at the bottom">
+<a href="https://tremor-5y7.pages.dev"><img src="docs/assets/readme/hero.jpg" width="100%" alt="A dark globe on a near-black scene with a cluster of red rings rippling out from one spot near its centre and a few smaller rings at its edges, with 7.7 strongest quake in gold in the top-left and a depth colour legend at the bottom"></a>
 
-<sub>Local build, 22 October 2026, a few seconds after load. Real USGS data at capture time.</sub>
+<sub>Live site, 25 October 2026, a few seconds after load. Real USGS data at capture time.</sub>
 
 </div>
 
@@ -66,8 +67,8 @@ npm run dev      # local dev server
 npm run build    # static site in dist/
 ```
 
-The build is a plain static folder. It was written for Cloudflare Pages but is not currently
-deployed anywhere.
+The build is a plain static folder, deployed to Cloudflare Pages at
+[tremor-5y7.pages.dev](https://tremor-5y7.pages.dev).
 
 <details>
 <summary><b>Project layout</b></summary>

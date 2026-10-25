@@ -44,10 +44,10 @@ function normalizeMag(mag: number): number {
   return Math.min(1, Math.max(0, (mag - MAG_MIN) / (MAG_MAX - MAG_MIN)))
 }
 
-/** Outer ring radius in world units (0.3-2.5 earth radii). */
+/** Outer ring radius in world units (0.03-0.25 globe radii), so rings stay small marks on the surface. */
 export function magToRingRadius(mag: number): number {
   const t = normalizeMag(mag)
-  return (0.3 + t * (2.5 - 0.3)) * GLOBE_RADIUS
+  return (0.03 + t * (0.25 - 0.03)) * GLOBE_RADIUS
 }
 
 /** Expansion speed multiplier (0.3-2.0x base). */
